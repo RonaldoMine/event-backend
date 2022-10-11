@@ -30,7 +30,7 @@ public class User {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "setting_id", referencedColumnName = "id")
-    private Setting setting;
+    private Enterprise enterprise;
 
 
 }

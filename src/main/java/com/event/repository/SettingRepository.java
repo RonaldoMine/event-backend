@@ -1,7 +1,7 @@
 package com.event.repository;
 
-import com.event.model.Setting;
+import com.event.model.Enterprise;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface SettingRepository extends JpaRepository<Setting, Long> {
+public interface SettingRepository extends JpaRepository<Enterprise, Long> {
 }

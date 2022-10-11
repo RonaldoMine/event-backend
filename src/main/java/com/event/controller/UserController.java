@@ -16,14 +16,14 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @GetMapping("/{setting_id}")
-    public List<User> all(@PathVariable("setting_id") Long setting_id) {
-        return userService.getUsers(setting_id);
+    @GetMapping("/{enterprise_id}")
+    public List<User> all(@PathVariable("enterprise_id") Long enterprise_id) {
+        return userService.getUsers(enterprise_id);
     }
 
-    @PostMapping("save/{setting_id}")
-    public User store(@PathVariable Long setting_id, @RequestBody UserRequest userRequest) {
-        return userService.store(userRequest, setting_id);
+    @PostMapping("save/{enterprise_id}")
+    public User store(@PathVariable Long enterprise_id, @RequestBody UserRequest userRequest) {
+        return userService.store(userRequest, enterprise_id);
     }
 
     @PutMapping("update/{id}")

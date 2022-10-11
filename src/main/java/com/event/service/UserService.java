@@ -1,6 +1,6 @@
 package com.event.service;
 
-import com.event.model.Setting;
+import com.event.model.Enterprise;
 import com.event.model.User;
 import com.event.repository.SettingRepository;
 import com.event.repository.UserRepository;
@@ -21,17 +21,17 @@ public class UserService {
     private SettingRepository settingRepository;
 
     public List<User> getUsers(Long setting_id) {
-        return userRepository.findAllBySettingId(setting_id);
+        return userRepository.findAllByEnterpriseId(setting_id);
     }
 
-    public User store(UserRequest userRequest, Long setting_id) {
+    public User store(UserRequest userRequest, Long enterprise_id) {
         User user = new User();
-        Setting setting = settingRepository.findById(setting_id).get();
+        Enterprise enterprise = settingRepository.findById(enterprise_id).get();
         user.setName(userRequest.getName());
         user.setLast_name(userRequest.getLast_name());
         user.setEmail(userRequest.getEmail());
         user.setPhone(userRequest.getPhone());
-        user.setSetting(setting);
+        user.setEnterprise(enterprise);
         user.setPassword(BCrypt.hashpw(userRequest.getPassword(), BCrypt.gensalt()));
         return userRepository.save(user);
     }
