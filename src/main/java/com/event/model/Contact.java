@@ -35,11 +35,11 @@ public class Contact {
     private String picture;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "setting_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "enterprise_id", referencedColumnName = "id", nullable = false)
     private Enterprise enterprise;
 
     @Enumerated(EnumType.STRING)
-    @Column(name="gender")
+    @Column(name="gender", nullable = false)
     private EnumGender gender;
 
 }

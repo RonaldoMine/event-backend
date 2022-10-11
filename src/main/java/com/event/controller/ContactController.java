@@ -20,7 +20,7 @@ public class ContactController {
      * Return a list of contacts
      *
      * @param enterprise_id represent the ID of enterprises
-     * @return List contact by enterprise setting
+     * @return List contact by enterprise enterprise
      */
     @GetMapping("/{enterprise_id}")
     public List<Contact> all(@PathVariable("enterprise_id") Long enterprise_id) {

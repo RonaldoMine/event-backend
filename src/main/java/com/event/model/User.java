@@ -29,7 +29,7 @@ public class User {
     private String phone;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "setting_id", referencedColumnName = "id")
+    @JoinColumn(name = "enterprise_id", referencedColumnName = "id")
     private Enterprise enterprise;
 
 

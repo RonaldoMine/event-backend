@@ -1,16 +1,16 @@
 package com.event.service;
 
 import com.event.model.Enterprise;
-import com.event.repository.SettingRepository;
+import com.event.repository.EnterpriseRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
-public class SettingService {
-    SettingRepository settingRepository;
+public class EnterpriseService {
+    EnterpriseRepository enterpriseRepository;
 
     public Optional<Enterprise> find(Long id){
-        return settingRepository.findById(id);
+        return enterpriseRepository.findById(id);
     }
 }

@@ -2,7 +2,7 @@ package com.event.service;
 
 import com.event.model.Enterprise;
 import com.event.model.User;
-import com.event.repository.SettingRepository;
+import com.event.repository.EnterpriseRepository;
 import com.event.repository.UserRepository;
 import com.event.request.UserRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,15 +18,15 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
     @Autowired
-    private SettingRepository settingRepository;
+    private EnterpriseRepository enterpriseRepository;
 
-    public List<User> getUsers(Long setting_id) {
-        return userRepository.findAllByEnterpriseId(setting_id);
+    public List<User> getUsers(Long enterprise_id) {
+        return userRepository.findAllByEnterpriseId(enterprise_id);
     }
 
     public User store(UserRequest userRequest, Long enterprise_id) {
         User user = new User();
-        Enterprise enterprise = settingRepository.findById(enterprise_id).get();
+        Enterprise enterprise = enterpriseRepository.findById(enterprise_id).get();
         user.setName(userRequest.getName());
         user.setLast_name(userRequest.getLast_name());
         user.setEmail(userRequest.getEmail());
